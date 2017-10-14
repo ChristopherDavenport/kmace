@@ -27,11 +27,8 @@ lazy val projectSettings = Seq(
   scalaVersion := "2.11.11",
 
   libraryDependencies ++= Seq(
-    "co.fs2" %% "fs2-io" % "0.10.0-M7",
-//    "org.apache.hbase" % "hbase" % "1.1.12",
-//    "org.apache.hadoop" % "hadoop-common" % "2.8.1",
-//    "com.chuusai" %% "shapeless" % "2.3.2",
-
+    "org.scalaz.stream" %% "scalaz-stream" % "0.8.5a",
+    "org.scalaz" %% "scalaz" % "7.2.16",
     "org.apache.hadoop" % "hadoop-common" % hadoopVersion,
     "org.apache.hbase" % "hbase-common" % hbaseVersion,
     "org.apache.hbase" % "hbase-client" % hbaseVersion,
@@ -81,7 +78,7 @@ lazy val commonSettings = Seq(
     "-Xfuture",                          // Turn on future language features.
     "-Xlint:adapted-args",               // Warn if an argument list is modified to match the receiver.
     "-Xlint:by-name-right-associative",  // By-name parameter of right associative operator.
-    "-Xlint:constant",                   // Evaluation of a constant arithmetic expression results in an error.
+//    "-Xlint:constant",                   // Evaluation of a constant arithmetic expression results in an error.
     "-Xlint:delayedinit-select",         // Selecting member of DelayedInit.
     "-Xlint:doc-detached",               // A Scaladoc comment appears to be detached from its element.
     "-Xlint:inaccessible",               // Warn about inaccessible types in method signatures.
