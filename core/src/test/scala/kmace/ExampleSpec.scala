@@ -1,0 +1,5 @@
+package kmace
+
+class ExampleSpec {
+
+}
