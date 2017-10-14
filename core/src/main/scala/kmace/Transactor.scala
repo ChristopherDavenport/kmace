@@ -26,7 +26,7 @@ case class Transactor[F[_], A](a: A)(implicit F: Effect[F], C: Config[A]){
   }
 
   def transformResult[K](result: Result)
-                           (implicit D: Decoder[K], S: Decoder[String]): Option[(K, List[Option[Field[Array[Byte]]]])] = {
+                        (implicit D: Decoder[K], S: Decoder[String]): Option[(K, List[Option[Field[Array[Byte]]]])] = {
     import scala.collection.JavaConverters._
     if (result.isEmpty) None
     else D.fromBytes(result.getRow).map(n =>
